@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+.title_div {
+	width: auto;
+	padding: 3px;
+	height: auto
+}
+
+.stay_warn {
+	width: auto;
+	min-width: 155px;
+	height: 30px;
+	background: #eee;
+	margin: 6px;
+	text-align: center;
+	color: #FF9900;
+	line-height: 30px;
+}
+
+.stay_iddiv {
+	min-width: 155px;
+	background: #FE6E6E;
+	width: auto;
+	height: 100px;
+	margin-left: 3px;
+	margin-bottom: 3px;
+}
+
+.aclose {
+	margin: 3px;
+	cursor: pointer
+}
+
+.tb_div {
+	padding: 5px;
+	height: auto;
+	width: auto;
+}
+
+.all_record {
+	text-align: center;
+	font-size: 20px;
+	height: 40px;
+	padding-top: 20px;
+}
+
+#dg {
+	position: absolute;
+	right: 161px;
+	top: -200px;
+}

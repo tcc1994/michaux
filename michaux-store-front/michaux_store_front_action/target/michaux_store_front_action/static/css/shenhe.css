@@ -1,0 +1,110 @@
+*{padding:0;margin:0}
+br{clear:both;font-size:0;line-height:0}
+a{text-decoration: none;color: lightslategray}
+ul,ol{list-style: none}
+img{border:none}
+
+.wx_examine_box1{
+	margin-bottom: 12px;
+}
+.wx_examine_box1 a{
+	margin-left: 5px;
+	margin-right: 5px;		
+}
+.wx_examine_box2{
+	width: 88%;
+    margin: auto;
+    padding-top: 40px;
+}
+.wx_btn{line-height: 35px;border:none;background:#6699ff;width: 50px;text-align:center;color: white;cursor: pointer}	
+.wx_examine_box2_1{margin-bottom: 36px;}
+.wx_examine_box2_1 span{
+	font-size:20px;
+	font-weight:bold;
+}
+.wx_examine_box2_1_left,.wx_examine_box2_1_right{box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box;color: #333; }
+.wx_examine_box2_1_left>div{box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box;font-size: 14px;color: #333;}	
+.wx_examine_box2_2 img{margin-left: 4px;margin-right: 4px;vertical-align: middle}
+.wx_examine_box2_2 span{margin-right:4px;}
+.wx_examine_box2_2>div {margin-bottom: 8px;}
+.wx_btn_2{width:138px;background: #fb7754;color: white;text-align:center;padding:0 30px;border: none;line-height:37px;font-size:16px;margin-top:100px;cursor: pointer}
+.wx_btn_2:hover{opacity: 0.7}
+.wx_images_box1{width: 50%;box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box;font-size: 14px;}
+.wx_images_box1 img{
+	max-width: 100%;
+	margin: 4px 0 28px 60px;
+}
+
+.alert_box_1,.alert_box_7{display: none}
+.alert_box_1_3{background: white;width: 388px;padding-bottom: 30px}
+.alert_box_1_1{text-align: center;line-height: 60px;}
+.alert_box_1_2{text-align: center}
+.alert_box_1_2 button{border: none;margin-left: 8px;margin-right:8px;padding:10px;outline:none;color:black;cursor: pointer}
+.alert_box_1_7{text-align: center}
+.alert_box_1_7 textarea{width: 80%;margin-top: 10px;height:80px;max-height:80px;max-width: 80%}
+.alert_box_1_8{padding-top: 10px;text-align:center;}
+.alert_box_1_2 .alert_box_1_5{background:#f4d34e;cursor: pointer;color: white}
+.alert_box_1_2 .alert_box_1_6{background:#cc0000;cursor: pointer;color: white}
+.alert_box_1_8_btn1{border: none;text-align:center;line-height:35px;width:60px;color: white;cursor:pointer;background:#f4d34e;margin-right:4px;}
+.alert_box_1_8_btn2{border: none;text-align:center;line-height:35px;width:60px;color: white;cursor:pointer;background:#cc0000;margin-left: 4px;}
+.message_box{border: 1px solid gray;background: #f4d34e;color: indianred;width: 150px;padding: 25px;display: none}
+.message_box div{color: gray}
+
+.submitpart{
+	font-size: 14px;
+    color: #333;
+}
+.submitpart .submitblcok{
+	margin-bottom:8px;
+}
+.submitpart .passornot{
+	margin-bottom:20px;
+}
+.notetext{
+	margin:4px 0 4px 0;
+}
+.notetext span{
+	float:left;
+}
+.wx_examine_box21,
+.userdetail{
+	padding:60px 0 0 80px;
+}
+.carrynote{
+	background:#fafafa;
+	padding:30px 20px 30px; 
+	border:1px #dedede dashed;
+}
+.carrynote .carrytit{
+	line-height:50px;
+	border-bottom:1px #dedede dashed;
+}
+.carrynote .carrynum{
+	width:50%;
+	float:right;
+}
+.blankborder{
+	margin: 30px 0;
+	border-bottom: 1px #dedede dashed;
+}
+.aligninput div{
+	margin-bottom:10px;
+	line-height:24px;
+}
+.aligninput div span{
+	width:80px;
+	text-align:left;
+	float:left;
+}
+.carry{
+	width:66%;
+}
+.editbtn{
+	margin: 40px 0 0 87px;
+	line-height:28px;
+}
+.formbtn{
+	text-align:center;
+}
+
+

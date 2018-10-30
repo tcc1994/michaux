@@ -1,0 +1,185 @@
+@CHARSET "UTF-8";
+/*common*/
+html,body,p,ul,ol,dl,dd,dt,li,form,p,h5,input,fieldset,table,tr,td,img{padding:0;margin:0;}
+ul,ol,li{list-style:none;}
+img{border:0;display:block;}
+body{font-family:"微软雅黑","宋体";}
+input button{outline:none;}
+button{cursor:pointer;}
+em,i{font-style:normal;}
+
+.contain{
+    width:90%;
+    margin:auto;
+    zoom: 1;
+}
+.contain:after{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.contain .con{
+    padding: 2px 0 2px 32px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+.contain .con1 em{
+    color: #ff0000;
+    margin-left:20px;
+}
+.contain .con1{
+    background: url(../images/invoice_m1.png) no-repeat center left;
+    -webkit-background-size: contain;  
+    -moz-background-size: contain;  
+    -o-background-size: contain;  
+    background-size: contain;  
+    margin-top:28px;
+}
+.contain .con2{
+    background: url(../images/invoice_m2.png) no-repeat center left;
+    -webkit-background-size: contain;  
+    -moz-background-size: contain;  
+    -o-background-size: contain;  
+    background-size: contain;  
+}
+.contain .con3{
+    background: url(../images/invoice_m4.png) no-repeat center left;
+    -webkit-background-size: contain;  
+    -moz-background-size: contain;  
+    -o-background-size: contain;  
+    background-size: contain;  
+    font-size: 14px;
+    margin-top:20px;
+}
+.contain .blank{
+    height:24px;
+    width:100%;
+    border-bottom: 1px dashed #999;
+}
+.contain .con4{
+    margin:10px 6px 0 32px;
+}
+.contain .con4 p, .contain .con6 p, .contain .con8 p{
+    color: #333;
+    font-size: 14px;
+    line-height: 28px;
+}
+.contain .con4 p em{
+    color: #2794EF;
+    margin-left: 20px;
+}
+.contain .con4 p .invoice_type{
+    color: #FA9D2B;
+}
+.contain .con5{
+    background: url(../images/invoice_m5.png) no-repeat center left;
+    -webkit-background-size: contain;  
+    -moz-background-size: contain;  
+    -o-background-size: contain;  
+    background-size: contain;  
+    font-size: 14px;
+    margin-top:20px;
+}
+.contain .con7{
+    background: url(../images/invoice_m6.png) no-repeat center left;
+    -webkit-background-size: contain;  
+    -moz-background-size: contain;  
+    -o-background-size: contain;  
+    background-size: contain;  
+    font-size: 14px;
+    margin-top:20px;
+}
+.contain .invoice_num{
+    line-height: 28px;
+    font-size: 14px;
+    margin:23px 0 90px 32px;
+}
+.contain .invoice_num input{
+    width: 220px;
+    height: 28px;
+    line-height: 28px;
+    text-indent: 10px;
+}
+.contain .invoice_btn{
+    width: 200px;
+    height: 36px;
+    color: #fff;
+    background: #cc0000;
+    font-size: 16px;
+    border:none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 32px;
+    cursor: pointer;
+    margin-bottom: 100px;
+}
+.tan{
+    width:100%;
+    height:100%;
+    display: none;
+}
+.tan .bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #666666;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -ms-filter:
+            "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    z-index: 100000;
+}
+.tan .tancon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 100001;
+    width: 400px;
+    height: 233px;
+    margin: auto;
+    overflow: auto;
+    color: #535e66;
+    border: 1px solid #999;
+
+}
+.tan .tancon h4{
+    text-align: center;
+    border-bottom: 1px solid #999;
+    line-height: 46px;
+    margin: 0;
+    font-size: 18px;
+}
+.tan .tancon p{
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    font-width:600;
+    line-height: 144px;
+}
+.tan .tancon input{
+    width: 50%;
+    float: left;
+    line-height: 42px;
+    border:none;
+    font-weight:600;
+    background: #999;
+    color: #000000;
+    cursor: pointer;
+}
+.tan .tancon .sure{
+    background: #2fa0ff;
+    color: #fff;
+
+}

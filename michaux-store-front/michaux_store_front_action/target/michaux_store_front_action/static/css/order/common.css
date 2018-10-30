@@ -1,0 +1,73 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{
+/*color: #fff;*/
+margin:0;
+padding:0;
+}
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+margin:0;
+padding:0;
+}
+
+body,button,input,select,textarea{
+font:12px/1.5 tahoma,arial,"\5b8b\4f53";*line-height:1.5;
+-ms-overflow-style:scrollbar;
+font: 12px/1.5 Tahoma,'Microsoft Yahei','Simsun';
+color: #444;
+}
+
+h1,h2,h3,h4,h5,h6,td{
+	font-weight: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-size:100%
+}
+
+ul,ol{
+list-style:none
+}
+
+a{
+color: #666;
+text-decoration:none;
+outline: 0;
+border: 0;
+}
+
+fieldset,img{
+border:0
+}
+
+button,input,select,textarea{
+font-size:100%
+}
+
+table{
+border-collapse:collapse;
+border-spacing:0
+}
+
+address, cite, dfn, em, var {
+font-style: normal;
+}
+
+div {
+display: block;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+border: none;
+}
+
+:focus {outline:none;} /*for IE*/
+::-moz-focus-inner {border-color: transparent;} /*for mozilla*/
