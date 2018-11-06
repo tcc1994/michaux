@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tcc.main.dao.local.test.MichauxTestMapper" >
+  <resultMap id="BaseResultMap" type="com.tcc.main.domain.local.test.MichauxTest" >
+    <id column="mt_id" property="mtId" jdbcType="BIGINT" />
+    <result column="mt_info" property="mtInfo" jdbcType="VARCHAR" />
+    <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    mt_id, mt_info, create_datetime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tcc.main.domain.local.test.MichauxTestExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from michaux_test
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from michaux_test
+    where mt_id = #{mtId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="Long" >
+    delete from michaux_test
+    where mt_id = #{mtId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tcc.main.domain.local.test.MichauxTestExample" >
+    delete from michaux_test
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tcc.main.domain.local.test.MichauxTest" >
+    insert into michaux_test (mt_id, mt_info, create_datetime
+      )
+    values (#{mtId,jdbcType=BIGINT}, #{mtInfo,jdbcType=VARCHAR}, #{createDatetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tcc.main.domain.local.test.MichauxTest" >
+    insert into michaux_test
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mtId != null" >
+        mt_id,
+      </if>
+      <if test="mtInfo != null" >
+        mt_info,
+      </if>
+      <if test="createDatetime != null" >
+        create_datetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mtId != null" >
+        #{mtId,jdbcType=BIGINT},
+      </if>
+      <if test="mtInfo != null" >
+        #{mtInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createDatetime != null" >
+        #{createDatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tcc.main.domain.local.test.MichauxTestExample" resultType="java.lang.Integer" >
+    select count(*) from michaux_test
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update michaux_test
+    <set >
+      <if test="record.mtId != null" >
+        mt_id = #{record.mtId,jdbcType=BIGINT},
+      </if>
+      <if test="record.mtInfo != null" >
+        mt_info = #{record.mtInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDatetime != null" >
+        create_datetime = #{record.createDatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update michaux_test
+    set mt_id = #{record.mtId,jdbcType=BIGINT},
+      mt_info = #{record.mtInfo,jdbcType=VARCHAR},
+      create_datetime = #{record.createDatetime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tcc.main.domain.local.test.MichauxTest" >
+    update michaux_test
+    <set >
+      <if test="mtInfo != null" >
+        mt_info = #{mtInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createDatetime != null" >
+        create_datetime = #{createDatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mt_id = #{mtId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tcc.main.domain.local.test.MichauxTest" >
+    update michaux_test
+    set mt_info = #{mtInfo,jdbcType=VARCHAR},
+      create_datetime = #{createDatetime,jdbcType=TIMESTAMP}
+    where mt_id = #{mtId,jdbcType=BIGINT}
+  </update>
+</mapper>
