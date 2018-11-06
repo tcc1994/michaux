@@ -1,1 +1,5 @@
-/michaux-store-front
+*/target/*
+/.classpath
+/.project
+/.settings
+.gitignore
