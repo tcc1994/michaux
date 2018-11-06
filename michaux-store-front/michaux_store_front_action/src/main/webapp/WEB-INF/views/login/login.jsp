@@ -65,7 +65,7 @@ $(function() {
 }); 
 function loadingDiv(){
 	$(".fakeloader").fakeLoader({
-  		  timeToHide:900,
+  		  timeToHide:1000,
   		  zIndex:"999",
   		  bgColor:"#F0C275",
   		  spinner:"spinner3",
