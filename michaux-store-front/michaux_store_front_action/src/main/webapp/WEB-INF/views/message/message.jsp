@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>消息</title>
 </head>
-<body>
-${message }
+<body style="text-align: center;">
+<h1>${message }</h1>
 </body>
 </html>

@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/include/boot.jsp"%>
-<%@ include file="/WEB-INF/views/include/alert.jsp"%>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>米修登录</title>
+<title>账号登录</title>
+<%@ include file="/WEB-INF/views/include/boot.jsp"%>
+<%@ include file="/WEB-INF/views/include/alert.jsp"%>
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/login.css"/>
 
 </head>
 <body>
     <div class="container">
         <div class="form row">
-            <div class="form-horizontal col-md-offset-3" id="login_form">
-                <h3 class="form-title">LOGIN</h3>
+            <div class="form-horizontal col-md-offset-3">
+                <h3 class="form-title">LOGIN-MICHAUX</h3>
                 <div class="col-md-9">
                 	<form id="login-form">
 	                    <div class="form-group">
 	                        <i class="fa fa-user fa-lg"></i>
-	                        <input class="form-control required" type="text" placeholder="Username" id="username" name="username" autofocus="autofocus" maxlength="11"/>
+	                        <input class="form-control required" value="${account}" type="text" placeholder="Account" id="account" name="account" autofocus="autofocus" maxlength="11"/>
 	                    </div>
 	                    <div class="form-group">
 	                            <i class="fa fa-lock fa-lg"></i>
@@ -37,9 +37,11 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="${ctx}/static/js/alert/alert.js"></script>
+    <div class="fakeLoader"></div>
 <script type="text/javascript">
+
 $(function() {
+	
 	//生成验证码  
 	$('#kaptchaImage').click(function () {
 	     $(this).hide().attr('src', '${ctx}/kaptcha/doGet.do?' + Math.floor(Math.random()*100) ).fadeIn();  
@@ -54,8 +56,22 @@ $(function() {
 		  ajaxSubmit();
 	  }
 	});
+	$("#ok_btn").click(function(){
+		$('#alert_like').modal('hide');
+		var url = $("#skipUrl").val();
+		if(url != ""){
+			window.location.href="${ctx}"+url;
+		}
+	});
 }); 
-
+function loadingDiv(){
+	$(".fakeloader").fakeLoader({
+  		  timeToHide:900,
+  		  zIndex:"999",
+  		  bgColor:"#F0C275",
+  		  spinner:"spinner3",
+  		});
+}
 function ajaxSubmit(){
 	$.ajax({
         type: "POST",
@@ -63,41 +79,56 @@ function ajaxSubmit(){
         dataType: "json",
         data: $('#login-form').serialize(),
         beforeSend: function() {
-	     	var name = $("input[name='username']").val();
+	     	var account = $("input[name='account']").val();
 	        var pwd = $("input[name='password']").val();
 	        var kaptcha = $("input[name='kaptcha']").val();
-	        if(name.trim()==""){
-	    		alertLocal("用户名不能为空");
+	        if(account.trim()==""){
+	    		alertLocal("账号不能为空");
 	    		return false;
+	    	}else{
+	    		var pattern = /^1[34578]\d{9}$/;
+		        if(!pattern.test(account.trim())){
+		        	alertLocal("请输入正确手机号");
+		    		return false;
+		        }
 	    	}
 	     	if(pwd.trim()==""){
 	    		alertLocal("密码不能为空");
 	    		return false;
+	    	}else{
+	    		if(pwd.trim().length < 6){
+		    		alertLocal("密码错误");
+		    		return false;
+		    	}
 	    	}
-	     	var pattern = /^1[34578]\d{9}$/;
-	        if(!pattern.test(name.trim())){
-	        	alertLocal("请输入正确手机号");
-	    		return false;
-	        }
 	        if(kaptcha.trim()==""){
 	        	alertLocal("请输入验证码");
 	    		return false;
+	        }else{
+	        	if(kaptcha.trim().length!=4){
+		        	alertLocal("验证码错误");
+		        	$("#kaptchaImage").hide().attr('src', '${ctx}/kaptcha/doGet.do?' + Math.floor(Math.random()*100) ).fadeIn();  
+		   	     	event.cancelBubble=true;  
+		    		return false;
+		        }
 	        }
+	        loadingDiv();
         },
         success: function (data) {
         	if(data=='200'){
-        		alertLocal("登录成功");
-        		window.location.href("/home/page.do");
+        		window.location.href="${ctx}/home/index.do";
         	}
         	if(data=='101'){
-        		alertLocal("用户不存在");
-        		window.location.href("/reg/page.do");
+        		alertLocal('用户不存在');
+        		$("#skipUrl").val("/reg/page.do");
         	}
         	if(data=='102'){
         		alertLocal("密码错误");
         	}
         	if(data=='103'){
         		alertLocal("验证码错误");
+        		$("#kaptchaImage").hide().attr('src', '${ctx}/kaptcha/doGet.do?' + Math.floor(Math.random()*100) ).fadeIn();  
+	   	     	event.cancelBubble=true;
         	}
         	if(data=='500'){
         		alertLocal("系统异常,请重试");

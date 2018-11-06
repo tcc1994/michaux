@@ -17,8 +17,8 @@ public abstract class BaseManagerImpl<T, E, PK extends Serializable> implements 
 
 	public abstract BaseManager<T, E, PK> getManager();
 
-	public T searchByPrimaryKey(final PK id) {
-		return this.getManager().searchByPrimaryKey(id);
+	public T searchByPrimaryKey(final PK pk) {
+		return this.getManager().searchByPrimaryKey(pk);
 	}
 
 	public List<T> searchByExample(E example) {

@@ -83,6 +83,7 @@ public class RSAEncrypt {
 	/**
 	 * 得到秘钥字符串
 	 */
+	@SuppressWarnings("unused")
 	private static String getKeyString(Key key) throws Exception {
 		byte[] keyBytes = key.getEncoded();
 		return Base64.encode(keyBytes);

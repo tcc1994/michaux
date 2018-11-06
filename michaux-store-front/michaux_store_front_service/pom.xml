@@ -88,7 +88,10 @@
             <groupId>com.michaux.store.front</groupId>
             <artifactId>michaux_store_front_common</artifactId>
         </dependency>
-
+		<dependency>
+            <groupId>com.michaux.store.front</groupId>
+            <artifactId>michaux_store_front_dto</artifactId>
+        </dependency>
         <!-- security begin -->
         <dependency>
             <groupId>org.apache.shiro</groupId>

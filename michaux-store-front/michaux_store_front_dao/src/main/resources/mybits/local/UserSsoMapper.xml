@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.tcc.main.domain.local.user.UserSso" >
     <id column="us_id" property="usId" jdbcType="BIGINT" />
     <result column="us_phone" property="usPhone" jdbcType="BIGINT" />
-    <result column="us_account" property="usAccount" jdbcType="VARCHAR" />
     <result column="us_passwd" property="usPasswd" jdbcType="VARCHAR" />
     <result column="us_secret" property="usSecret" jdbcType="VARCHAR" />
     <result column="us_reg_client" property="usRegClient" jdbcType="INTEGER" />
@@ -72,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    us_id, us_phone, us_account, us_passwd, us_secret, us_reg_client, us_frozen, us_time_create, 
+    us_id, us_phone, us_passwd, us_secret, us_reg_client, us_frozen, us_time_create, 
     us_time_modify, us_yn
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tcc.main.domain.local.user.UserSsoExample" >
@@ -105,17 +104,17 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.tcc.main.domain.local.user.UserSso" >
-    insert into michaux_user_sso (us_id, us_phone, us_account, 
-      us_passwd, us_secret, us_reg_client, 
-      us_frozen, us_time_create, us_time_modify, 
-      us_yn)
-    values (#{usId,jdbcType=BIGINT}, #{usPhone,jdbcType=BIGINT}, #{usAccount,jdbcType=VARCHAR}, 
-      #{usPasswd,jdbcType=VARCHAR}, #{usSecret,jdbcType=VARCHAR}, #{usRegClient,jdbcType=INTEGER}, 
-      #{usFrozen,jdbcType=INTEGER}, #{usTimeCreate,jdbcType=TIMESTAMP}, #{usTimeModify,jdbcType=TIMESTAMP}, 
-      #{usYn,jdbcType=INTEGER})
+  <insert id="insert" parameterType="com.tcc.main.domain.local.user.UserSso" useGeneratedKeys="true" keyProperty="usId" >
+    insert into michaux_user_sso (us_id, us_phone, us_passwd, 
+      us_secret, us_reg_client, us_frozen, 
+      us_time_create, us_time_modify, us_yn
+      )
+    values (#{usId,jdbcType=BIGINT}, #{usPhone,jdbcType=BIGINT}, #{usPasswd,jdbcType=VARCHAR}, 
+      #{usSecret,jdbcType=VARCHAR}, #{usRegClient,jdbcType=INTEGER}, #{usFrozen,jdbcType=INTEGER}, 
+      #{usTimeCreate,jdbcType=TIMESTAMP}, #{usTimeModify,jdbcType=TIMESTAMP}, #{usYn,jdbcType=INTEGER}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.tcc.main.domain.local.user.UserSso" >
+  <insert id="insertSelective" parameterType="com.tcc.main.domain.local.user.UserSso" useGeneratedKeys="true" keyProperty="usId" >
     insert into michaux_user_sso
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="usId != null" >
@@ -123,9 +122,6 @@
       </if>
       <if test="usPhone != null" >
         us_phone,
-      </if>
-      <if test="usAccount != null" >
-        us_account,
       </if>
       <if test="usPasswd != null" >
         us_passwd,
@@ -155,9 +151,6 @@
       </if>
       <if test="usPhone != null" >
         #{usPhone,jdbcType=BIGINT},
-      </if>
-      <if test="usAccount != null" >
-        #{usAccount,jdbcType=VARCHAR},
       </if>
       <if test="usPasswd != null" >
         #{usPasswd,jdbcType=VARCHAR},
@@ -197,9 +190,6 @@
       <if test="record.usPhone != null" >
         us_phone = #{record.usPhone,jdbcType=BIGINT},
       </if>
-      <if test="record.usAccount != null" >
-        us_account = #{record.usAccount,jdbcType=VARCHAR},
-      </if>
       <if test="record.usPasswd != null" >
         us_passwd = #{record.usPasswd,jdbcType=VARCHAR},
       </if>
@@ -230,7 +220,6 @@
     update michaux_user_sso
     set us_id = #{record.usId,jdbcType=BIGINT},
       us_phone = #{record.usPhone,jdbcType=BIGINT},
-      us_account = #{record.usAccount,jdbcType=VARCHAR},
       us_passwd = #{record.usPasswd,jdbcType=VARCHAR},
       us_secret = #{record.usSecret,jdbcType=VARCHAR},
       us_reg_client = #{record.usRegClient,jdbcType=INTEGER},
@@ -247,9 +236,6 @@
     <set >
       <if test="usPhone != null" >
         us_phone = #{usPhone,jdbcType=BIGINT},
-      </if>
-      <if test="usAccount != null" >
-        us_account = #{usAccount,jdbcType=VARCHAR},
       </if>
       <if test="usPasswd != null" >
         us_passwd = #{usPasswd,jdbcType=VARCHAR},
@@ -278,7 +264,6 @@
   <update id="updateByPrimaryKey" parameterType="com.tcc.main.domain.local.user.UserSso" >
     update michaux_user_sso
     set us_phone = #{usPhone,jdbcType=BIGINT},
-      us_account = #{usAccount,jdbcType=VARCHAR},
       us_passwd = #{usPasswd,jdbcType=VARCHAR},
       us_secret = #{usSecret,jdbcType=VARCHAR},
       us_reg_client = #{usRegClient,jdbcType=INTEGER},

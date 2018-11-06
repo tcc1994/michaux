@@ -5,8 +5,6 @@ public class UserSso {
 
     private Long usPhone;
 
-    private String usAccount;
-
     private String usPasswd;
 
     private String usSecret;
@@ -35,14 +33,6 @@ public class UserSso {
 
     public void setUsPhone(Long usPhone) {
         this.usPhone = usPhone;
-    }
-
-    public String getUsAccount() {
-        return usAccount;
-    }
-
-    public void setUsAccount(String usAccount) {
-        this.usAccount = usAccount == null ? null : usAccount.trim();
     }
 
     public String getUsPasswd() {
