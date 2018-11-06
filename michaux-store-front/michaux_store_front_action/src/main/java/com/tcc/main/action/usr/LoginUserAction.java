@@ -43,11 +43,11 @@ public class LoginUserAction extends BaseAction {
 	@RequestMapping(value = "page", method = RequestMethod.GET)
 	public String loginPage(String account, Model model,HttpServletRequest request) {
 		//IP限制访问
-		String host = request.getRemoteHost();
-		if(!host.equals("0:0:0:0:0:0:0:1")){
-			model.addAttribute("message", "Sorry, your IP is not allowed to access this site ~");
-			return "message/message";
-		}
+//		String host = request.getRemoteHost();
+//		if(!host.equals("0:0:0:0:0:0:0:1")){
+//			model.addAttribute("message", "Sorry, your IP is not allowed to access this site ~");
+//			return "message/message";
+//		}
 		CurUser usr = (CurUser)request.getSession().getAttribute("account");
 		if(usr != null){
 			RoleProfile profile = roleProfileService.searchProfile(usr.getUsId());

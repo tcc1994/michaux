@@ -22,7 +22,7 @@
 	                    </div>
 	                    <div class="form-group">
 	                        <i class="fa fa-user fa-lg"></i>
-	                        <input class="form-control required" type="text" placeholder="Account" id="account" name="account" maxlength="11"/>
+	                        <input class="form-control required" type="text" value="${account}" placeholder="Account" id="account" name="account" maxlength="11"/>
 	                    </div>
 	                    <div class="form-group">
 	                            <i class="fa fa-lock fa-lg"></i>

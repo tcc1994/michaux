@@ -39,7 +39,6 @@
     </div>
     <div class="fakeLoader"></div>
 <script type="text/javascript">
-
 $(function() {
 	
 	//生成验证码  
@@ -73,15 +72,15 @@ function loadingDiv(){
   		});
 }
 function ajaxSubmit(){
+	var account = $("input[name='account']").val();
+	var pwd = $("input[name='password']").val();
+    var kaptcha = $("input[name='kaptcha']").val();
 	$.ajax({
         type: "POST",
         url: "${ctx}/login/submit.do" ,
         dataType: "json",
         data: $('#login-form').serialize(),
         beforeSend: function() {
-	     	var account = $("input[name='account']").val();
-	        var pwd = $("input[name='password']").val();
-	        var kaptcha = $("input[name='kaptcha']").val();
 	        if(account.trim()==""){
 	    		alertLocal("账号不能为空");
 	    		return false;
@@ -120,7 +119,7 @@ function ajaxSubmit(){
         	}
         	if(data=='101'){
         		alertLocal('用户不存在');
-        		$("#skipUrl").val("/reg/page.do");
+        		$("#skipUrl").val("/reg/page.do?account="+account);
         	}
         	if(data=='102'){
         		alertLocal("密码错误");

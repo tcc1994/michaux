@@ -2,8 +2,10 @@ package com.tcc.main.action.usr;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,7 +33,10 @@ public class RegisterUserAction {
 	 * @Date 2018年10月30日 上午11:46:02
 	 */
 	@RequestMapping(value = "page",method = RequestMethod.GET)
-	public String regPage(){
+	public String regPage(String account,Model model){
+	    if(!StringUtils.isEmpty(account)){
+	        model.addAttribute("account", account);
+	    }
 		return "register/reg";
 	}
 	
