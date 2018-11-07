@@ -1,9 +1,13 @@
 package com.tcc.main.action.test;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tcc.main.domain.local.test.MichauxTest;
 import com.tcc.main.service.test.MichauxTestService;
@@ -33,6 +37,13 @@ public class MichauxTestAction {
 		} catch (Exception e) {
 			return "error/500";
 		}
+	}
+	
+	@ResponseBody
+	@RequestMapping("{xx}")
+	public String test(@PathVariable("xx") String xx, HttpServletRequest request) {
+		System.out.println("========================" + xx);
+		return xx;
 	}
 	public static void main(String[] args) {
         System.out.println("测试忽略");
