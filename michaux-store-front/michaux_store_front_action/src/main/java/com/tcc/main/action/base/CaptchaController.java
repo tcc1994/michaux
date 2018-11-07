@@ -31,6 +31,7 @@ public class CaptchaController {
 	@Autowired
 	public void setCaptchaProducer(Producer captchaProducer) {
 		this.captchaProducer = captchaProducer;
+		System.out.println("dsfgdsgdsfg");
 	}
 
 	@RequestMapping("doGet")
