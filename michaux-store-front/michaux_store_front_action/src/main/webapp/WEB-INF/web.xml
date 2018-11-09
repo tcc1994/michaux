@@ -107,15 +107,15 @@
 		<url-pattern>/HighChartsUtil</url-pattern>
 	</servlet-mapping> -->
 	
-	<!-- kaptcha验证码 -->
-	<servlet>
+	<!-- kaptcha验证码-有action接口则无需配置此处 -->
+<!-- 	<servlet>
 		<servlet-name>kaptcha</servlet-name>
 		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>kaptcha</servlet-name>
 		<url-pattern>/static/images/kaptcha.jpg</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	
 	 <!-- 如果需要监控uri，设置Web关联监控配置 -->
     <filter>
