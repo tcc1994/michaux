@@ -82,6 +82,7 @@ public class UserSsoServiceImpl  implements UserSsoService {
 		userSsoManager.insert(userSso);
 		RoleProfile profile = new RoleProfile();
 		profile.setUsId(userSso.getUsId());
+		profile.setRpHeader("1");
 		profile.setRpNickName(nickname);
 		profile.setRpTimeCreate(dateTime);
 		profile.setRpYn(Usable.USABLE);
