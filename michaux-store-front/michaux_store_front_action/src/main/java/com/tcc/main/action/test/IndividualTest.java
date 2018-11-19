@@ -53,6 +53,7 @@ public class IndividualTest {
 	 * 已知 XYZ+YZZ=532，其中，X、Y、Z 为数字，编程求出 X、Y 和 Z 的值。
 	 */
 	public static int xyzValue(){
+		int compareTo = 1;
 		for (int x = 0; x < 10; x++) {
 			for (int y = 0; y < 10; y++) {
 				for (int z = 0; z < 10; z++) {
@@ -64,8 +65,8 @@ public class IndividualTest {
 					BigDecimal XYZ = new BigDecimal(xyz);
 					BigDecimal YZZ = new BigDecimal(yzz);
 					BigDecimal add = XYZ.add(YZZ);
-					BigDecimal YZZd = new BigDecimal(532);
-					int compareTo = add.compareTo(YZZd);
+					BigDecimal YZZd = new BigDecimal(985);
+					compareTo = add.compareTo(YZZd);
 					if(compareTo == 0){
 						System.err.println(x);
 						System.err.println(y);
@@ -73,6 +74,9 @@ public class IndividualTest {
 					}
 				}
 			}
+		}
+		if(compareTo == 1){
+			System.err.println("不存在!!");
 		}
 		return 0;
 	}
