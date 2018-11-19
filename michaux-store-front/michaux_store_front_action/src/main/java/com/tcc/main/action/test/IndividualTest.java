@@ -65,7 +65,7 @@ public class IndividualTest {
 					BigDecimal XYZ = new BigDecimal(xyz);
 					BigDecimal YZZ = new BigDecimal(yzz);
 					BigDecimal add = XYZ.add(YZZ);
-					BigDecimal YZZd = new BigDecimal(985);
+					BigDecimal YZZd = new BigDecimal(532);
 					compareTo = add.compareTo(YZZd);
 					if(compareTo == 0){
 						System.err.println(x);
