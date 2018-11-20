@@ -13,7 +13,7 @@ public class IndividualTest {
 	public static void main(String[] args) {
 		System.out.println(monkeyEatPeach());
 		System.out.println(monkeyEatPeach1(monkey()));
-		xyzValue();
+		xyzValue(532);
 	}
 	
 	/**
@@ -52,7 +52,7 @@ public class IndividualTest {
 	/**
 	 * 已知 XYZ+YZZ=532，其中，X、Y、Z 为数字，编程求出 X、Y 和 Z 的值。
 	 */
-	public static int xyzValue(){
+	public static int xyzValue(int target){
 		int compareTo = 1;
 		for (int x = 0; x < 10; x++) {
 			for (int y = 0; y < 10; y++) {
@@ -65,7 +65,7 @@ public class IndividualTest {
 					BigDecimal XYZ = new BigDecimal(xyz);
 					BigDecimal YZZ = new BigDecimal(yzz);
 					BigDecimal add = XYZ.add(YZZ);
-					BigDecimal YZZd = new BigDecimal(532);
+					BigDecimal YZZd = new BigDecimal(target);
 					compareTo = add.compareTo(YZZd);
 					if(compareTo == 0){
 						System.err.println(x);
