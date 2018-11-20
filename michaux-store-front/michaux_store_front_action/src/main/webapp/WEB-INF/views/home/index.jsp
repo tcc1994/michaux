@@ -105,17 +105,17 @@
 			<form id="profile-form">
 			 <div class="form-group">
 			 	<input id="sex" value="${profile.rpSex}" hidden/>
-			  性别 : <label class="radio-inline"><input id="radio1" type="radio"  value="1" name="rpSex" checked>男性 </label>
-			        <label class="radio-inline"><input id="radio2" type="radio"  value="2" name="rpSex">女性</label>
+			  性别 : <label class="radio-inline"><input id="radio1" type="radio"  value="1" name="rpSex" checked title="男"/>男性 </label>
+			        <label class="radio-inline"><input id="radio2" type="radio"  value="2" name="rpSex" title="女" />女性</label>
 			  </div>
 			  <!-- 头像 : <input type="file" class="file" name="rpHeader" placeholder="Header"/> -->
-			    <input type="text" name="rpAge" placeholder="Age" value="${profile.rpAge}" maxlength="3"/>
-			    <input type="text" name="rpNickName" placeholder="Nickname" value="${profile.rpNickName}"maxlength="10" />
-				<input type="email" name="rpEmail" placeholder="Email" value="${profile.rpEmail}" maxlength="30" />
-				<input type="text" name="rpCompany" placeholder="Company" value="${profile.rpCompany}" maxlength="30" />
-				<input type="text" name="rpOccupation" placeholder="Occupation" value="${profile.rpOccupation}" maxlength="30" />
-				<input type="text" name="rpIndustry" placeholder="Industry" value="${profile.rpIndustry}" maxlength="30" />
-				<input type="button" class="btn btn-success btn-lg btn-block" id="ajaxSubmit" value="确定">
+			    <input type="text" name="rpAge" placeholder="Age" value="${profile.rpAge}" maxlength="3" title="年龄"/>
+			    <input type="text" name="rpNickName" placeholder="Nickname" value="${profile.rpNickName}"maxlength="10" title="昵称"/>
+				<input type="email" name="rpEmail" placeholder="Email" value="${profile.rpEmail}" maxlength="30" title="邮箱"/>
+				<input type="text" name="rpCompany" placeholder="Company" value="${profile.rpCompany}" maxlength="30" title="公司"/>
+				<input type="text" name="rpOccupation" placeholder="Occupation" value="${profile.rpOccupation}" maxlength="30" title="职业"/>
+				<input type="text" name="rpIndustry" placeholder="Industry" value="${profile.rpIndustry}" maxlength="30" title="行业"/>
+				<input type="button" class="btn btn-success btn-lg btn-block" id="ajaxSubmit" value="确定" title="提交"/>
 			</form>
 		</div>
 	</div>
